@@ -1,0 +1,4 @@
+interface SamepleRPCInterface 
+{
+	[async] SendDataAsynchronouslyToPipe();
+}

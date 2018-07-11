@@ -1,0 +1,27 @@
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	uuid(4508636b-0ffb-4d86-bba6-0df1a9d9fc4c),
+
+	version(1.0),
+
+	implicit_handle(handle_t SampleRPCBinding)
+]
+interface SamepleRPCInterface
+{
+	typedef struct s_User {
+		char	name[100];
+		int		age;
+	} USER;
+
+
+	void SendDataSynchronouslyToPipe([in] unsigned long* ulData);
+
+	void ReceiveDataSynchronouslyFromPipe([out] unsigned long* ulData);
+
+	void SendDataAsynchronouslyToPipe([in] USER userData);
+
+	void Output([in, string] const char* szOutput);
+
+}
